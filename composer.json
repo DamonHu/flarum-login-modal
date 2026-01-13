@@ -1,9 +1,9 @@
 {
     "name": "damonhu/flarum-login-modal",
-    "description": "夜蝉禁用flarum账号登陆，改用自有账号体系登陆",
+    "description": "禁用flarum账号登陆，改用夜蝉账号体系登陆",
     "keywords": [
-        "flarum",
-        "login",
+        "yechan-flarum",
+        "yechan-login",
         "modal"
     ],
     "type": "flarum-extension",

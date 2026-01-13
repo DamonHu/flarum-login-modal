@@ -1,62 +1,58 @@
-# 📰 Flarum Third Party Login only 
-Only allow login and sign ups from oAuth extensions.
+# Demo测试，请勿商用 Demo testing, please do not use commercially
 
-If you have any feedback, let us know! Do you experience issues? You can report issues on the Flarum Forum or on [GitHub](https://github.com/v17development/flarum-third-party-login-only).
 
-> :warning: **Be careful**: This extension completely disables the Login and Registration forms.
 
-##  ℹ️ When to use this extension?
-To be clear, this extension **does not add** oAuth to your Flarum instance but instead disables the `Sign In` and `Sign Up` password-forms for a better authenticating flow user experience. Use [FoF Passport](https://discuss.flarum.org/d/5203) or [FoF oAuth](https://discuss.flarum.org/d/25182) to add oAuth to your forum.
+## fork自 [GitHub](https://github.com/v17development/flarum-third-party-login-only)
 
-This extension is suitable for organizations or communities that only want to allow sign-in and sign-ups with external oAuth accounts/providers.
+安装
 
-## 📥 Installation
-If you like to install this extension, run the following command:
 ```
-composer require v17development/flarum-third-party-login-only
+composer require DamonHu/flarum-login-modal
 ```
 
-## ♻ Updating
-Run the following command on your server to update the plugin
+更新
+
 ```
-composer update v17development/flarum-third-party-login-only
+composer update DamonHu/flarum-login-modal
 ```
 
-## 🦸 Features
-- Disables `/login`, `/api/login` and removes login form
-- Disables `/register` if there's no oAuth-sign-in `token` and removes registration form
-- Disables `/reset` & `/api/forgot` routes and removes password reset form
-- Managing new signups via oAuth extensions is still possible with the `Allow signups` permission
-- Makes it possible to add a welcome message for new users
+## 代码更新步骤
 
-## Knowledge base articles:
-- [Replacing Sign In and Sign Up button](https://community.v17.dev/knowledgebase/41)
-- [Authenticating new accounts](https://community.v17.dev/knowledgebase/44)
-- [Change and reset password links](https://community.v17.dev/knowledgebase/43)
-- [Allow users to change their email](https://community.v17.dev/knowledgebase/42)
+下载仓库，进入`js`目录 
 
-## 🔨 Works with:
-- [FriendsOfFlarum Passport](https://discuss.flarum.org/d/5203)
-- [FriendsOfFlarum oAuth](https://discuss.flarum.org/d/25182)
+安装依赖
 
-## 🙋 Questions, feedback?
-If you have any questions related to this extension, don't hesistate and reply to this topic or [open an issue](https://github.com/v17development/flarum-third-party-login-only/issues).
+```
+npm install 
+```
 
-## ❤️ Sponsored by Buttonizer
-This extension is sponsored by [Buttonizer](https://buttonizer.pro/).
+安装webpackage
 
-## 🖼️ Screenshots
+```
+npm install webpack webpack-cli -g
+```
 
-### Sign In window
-After activating this extension, the sign in form is removed, only oAuth buttons are visible. The "Forgot password" link is only visible when a "Forgot password link" is set-up.
+运行
 
-If the `Replace Sign In and Sign Up button` setting is enabled, the `Log in` window will not be visible and automatically opens the FoF Passport oAuth sign in window.
+```
+npm run build
+```
 
-![Sign in](https://i.imgur.com/DzMl1cx.png)
+### 运行报错处理
 
-### Custom Sign Up text
-If set, a custom welcome text will be visible after authenticating with new accounts.
-[![Sign Up](https://i.imgur.com/cuOIadi.png)](https://imgur.com/a/ix87nkM)
+运行报错是因为node版本不兼容，切到16
 
-### Admin settings
-[![Admin settings](https://i.imgur.com/oQOsMb7.png)](https://imgur.com/a/ix87nkM)
+```
+brew unlink node@18
+brew link --overwrite --force node@16
+```
+
+再执行
+
+```
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+
+## 发布新版
+
+github打tag，之后去[https://packagist.org/](https://packagist.org/)，可以使用github账号快捷登录。登录之后选择My packages，进入相应项目，点击更新即可。
