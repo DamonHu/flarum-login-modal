@@ -1,8 +1,6 @@
-# Demo测试，请勿商用 Demo testing, please do not use commercially
+## fork自 [flarum-third-party-login-only](https://github.com/v17development/flarum-third-party-login-only)
 
-
-
-## fork自 [GitHub](https://github.com/v17development/flarum-third-party-login-only)
+flraum插件开发练习的一个demo
 
 安装
 
